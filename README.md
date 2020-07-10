@@ -1,4 +1,4 @@
-# myfirstweb
+# MyFirstWeb
 ternak jawaban
 pada pembuatan web ini yang nantinya 
 akan berfungsi sebagai penolong pelajar
