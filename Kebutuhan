@@ -1,0 +1,47 @@
+======
+User
+======
+1. Nama.
+2. Username.
+3. Password.
+4. Validate.
+5. Tanggal lahir.
+6. Nomor Telp.
+7. Email.
+
+=======
+Pertanyaan
+=======
+1. Setiap bertanya dapat point.
+2. Setiap bertanya dapat exp.
+3. Hanya bisa jawab 5 dalam satu pertanyaan.
+
+=======
+Menjawab
+=======
+1. Setiap menjawab dapat point.
+2. Setiap menjawab, jawaban dihapus point berkurang.
+3. Setiap jawaban diberi tanda point.
+
+=======
+Penukaran point
+=======
+1. point bisa digunakan untuk boost pertanyaan.
+
+======================================================
+
+=======
+Forum Keseluruhan
+=======
+1. Bisa memberikan jawaban max 5 orang berbeda.
+2. Pada jawaban bisa diberikan komentar.
+3. Pemberian rate apabila ada yang menjawab benar.
+4. Penghapusan jawaban oleh pemberi pertanyaan.
+5. Bisa mereport jawaban.
+6. Bisa mereport pertanyaan.
+7. Jawaban hanya bisa diedit oleh pemberi jawaban apabila sudah dijawab.
+8. Memberikan jenis pertanyaan tentang apa.
+9. Memberikan jenis tingkat pertanyaan (sd, smp, sma).
+
+
+
