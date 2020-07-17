@@ -1,12 +1,7 @@
 /* body */
 body{
     text-align: center;
-}
-
-/* background */
-.bgcol{
-    background-color: rgb(66, 209, 162);
-    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .Signup:hover{
@@ -26,7 +21,7 @@ body{
 }
   
 .Login{
-    background-color: rgb(101, 160, 160);
+    background-color: white;
     width: 5rem;
     padding: 0.5rem;
     font-size: 1rem;
@@ -40,8 +35,8 @@ body{
 }
 
 .Login:hover{
-    background-color: rgb(101, 160, 160);
     box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.466);
+    color: rgb(66, 209, 162);
 }
 
 /* paragraph */
@@ -66,6 +61,27 @@ body{
 
 .contSOL>div{
     padding: 1rem;
+}
+
+.contHead{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    background-color: rgb(66, 209, 162);
+    height: auto;
+}
+
+.logo{
+    margin: 1rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: black;
+    text-decoration: underline transparent;
+    transition: all ease-in-out 0.6s;
+}
+
+.logo:hover{
+    text-decoration: underline;
 }
 
 /* container form setting */
@@ -104,4 +120,9 @@ input{
 /* LINK edit */
 a {
     text-decoration: none;
+}
+
+input{
+    border: none;
+    padding: 0.2rem;
 }
