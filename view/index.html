@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>SignUp</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+
+    <div class="bgcol">
+        <p class="pa1">Welcome To My Website. Lets create account first.</p>
+
+        <form action="/data" method="post">
+            <div>
+
+                <div class="contInput">
+
+                    <!-- cont1 -->
+                    <div class="boxInput">
+                        <!-- Name input -->
+                        <div>
+                            <label for="Name">Name</label>
+                            <div>
+                                <input type="text" name="name" id="Iname">
+                            </div>
+                        </div>
+                        
+                        <!-- Username -->
+                        <div>
+                            <label for="Iusername">Username</label>
+                            <div>
+                                <input type="text" name="username" id="Iusername">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- cont2 -->
+                    <div class="boxInput">
+                        <!-- pass -->
+                        <div>
+                            <label for="Ipass">Password</label>
+                            <div>
+                                <input type="password" name="pass" id="Ipass">
+                            </div>
+                        </div>
+
+                        <!-- validate -->
+                        <div>
+                            <label for="Ival">validate</label>
+                            <div>
+                                <input type="password" name="val" id="Ival">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- cont3 -->
+                    <div class="boxInput">
+                        <!-- BoD -->
+                        <div>
+                            <label for="Ibod">BoD</label>
+                            <div>
+                                <input type="date" name="bod" id="Ibod">
+                            </div>
+                        </div>
+
+                        <!-- telp -->
+                        <div>
+                            <label for="Itelp">Telp number</label>
+                            <div>
+                                <input type="text" name="telp" id="Itelp">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- cont4 -->
+                    <div class="boxInput">
+                        <!-- Email input -->
+                        <div>
+                            <label for="Iemail">Email</label>
+                            <div class="ukuranbox">
+                                <input type="email" name="email" id="Iemail">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    
+                <!-- Submit button -->
+                <div class="sbmbtn">
+                    <input type="submit" value="Submit">
+                </div>
+
+            </div>
+            
+        </form>
+
+    </div>
+</body>
+</html>
