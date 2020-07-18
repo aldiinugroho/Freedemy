@@ -10,8 +10,16 @@ app.use(bodyparser());
 // untuk merender css
 app.use(express.static(path.join(__dirname, '/view')));
 
-app.get("/", (req,res) => {
+app.get("/home", (req,res) => {
     res.sendFile(path.join(__dirname+'/view/index.html'));
+})
+
+app.get("/signup", (req,res) => {
+    res.sendFile(path.join(__dirname+'/view/signup.html'));
+})
+
+app.post("/error", (req,res) => {
+    res.sendFile(path.join(__dirname+'/view/error404.html'));
 })
 
 app.post('/data',(req,res) => {

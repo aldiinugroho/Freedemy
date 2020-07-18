@@ -51,6 +51,7 @@ body{
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: rgb(66, 209, 162);
 }
 
 .contSOL{
@@ -126,4 +127,16 @@ a {
 input{
     border: none;
     padding: 0.2rem;
+}
+
+/* error handling */
+.err1{
+    color: black;
+    font-size: 4rem;
+}
+
+.errbck{
+    width: auto;
+    height: 10rem;
+    background-color: rgb(66, 209, 162);
 }
