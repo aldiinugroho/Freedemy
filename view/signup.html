@@ -15,86 +15,53 @@
 <body>
 
     <div class="bgcol">
-        <p class="pa1">Welcome To My Website. Lets create account first.</p>
+        <div>
+            <a href="/home"><p class="logo">Freedemy</p></a>
+        </div>
         
-        <a href="/home"><p class="clr">BIO</p></a>
-
         <form action="/error" method="post">
-            <div>
+            <div class="pads">
+                <div class="contSOL">
 
-                <div class="contInput">
-
-                    <!-- cont1 -->
-                    <div class="boxInput">
-                        <!-- Name input -->
-                        <div>
-                            <div>
-                                <input type="text" name="name" id="Iname" placeholder="Name">
-                            </div>
-                        </div>
-                        
-                        <!-- Username -->
-                        <div>
-                            <div>
-                                <input type="text" name="username" id="Iusername" placeholder="Username">
-                            </div>
-                        </div>
+                    <div>
+                        <p>Thank you, for being a part of freedemy.</p>
                     </div>
-
-                    <!-- cont2 -->
-                    <div class="boxInput">
-                        <!-- pass -->
-                        <div>
-                            <div>
-                                <input type="password" name="password" id="Ipass" placeholder="Password">
-                            </div>
-                        </div>
-
-                        <!-- validate -->
-                        <div>
-                            <div>
-                                <input type="password" name="validate" id="Ival" placeholder="Validate">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- cont3 -->
-                    <div class="boxInput">
-                        <!-- BoD -->
-                        <div>
-                            <div>
-                                <input type="date" name="bod" id="Ibod" placeholder="Birth of Date">
-                            </div>
-                        </div>
-
-                        <!-- telp -->
-                        <div>
-                            <div>
-                                <input type="text" name="telp" id="Itelp" placeholder="Telp number">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- cont4 -->
-                    <div class="boxInput">
-                        <!-- Email input -->
-                        <div>
-                            <div class="ukuranbox">
-                                <input type="email" name="email" id="Iemail" placeholder="Email">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
     
-                <!-- Submit button -->
-                <div class="sbmbtn">
-                    <input type="submit" value="Submit">
+                    <div>
+                        <input type="text" name="name" id="Iname" placeholder="Name">
+                    </div>
+    
+                    <div>
+                        <input type="text" name="username" id="Iusername" placeholder="Username">
+                    </div>
+    
+                    <div>
+                        <input type="password" name="password" id="Ipass" placeholder="Password">
+                    </div>
+                    
+                    <div>
+                        <input type="password" name="validate" id="Ival" placeholder="Validate">
+                    </div>
+                    
+                    <!-- Submit button -->
+                    <div>
+                        <button class="LoginDsignn">Submit</button>
+                    </div>
+    
                 </div>
-
             </div>
             
         </form>
+
+        <div class="back">
+            <div class="backbtn">
+                <a class="clr" href="/home"><p>Home</p></a>
+            </div>
+    
+            <div class="backbtn">
+                <a class="clr" href="/errors"><p>Q&A ?</p></a>
+            </div>
+        </div>
 
     </div>
 </body>

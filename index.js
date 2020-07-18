@@ -22,6 +22,10 @@ app.post("/error", (req,res) => {
     res.sendFile(path.join(__dirname+'/view/error404.html'));
 })
 
+app.get("/errors", (req,res) => {
+    res.sendFile(path.join(__dirname+'/view/error404.html'));
+})
+
 app.post('/data',(req,res) => {
     res.end(JSON.stringify(req.body));
 });
