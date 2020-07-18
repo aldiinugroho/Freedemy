@@ -103,12 +103,35 @@ body{
     font-size: 2.5rem;
     color: black;
     text-decoration: underline transparent;
+    text-decoration-color: rgb(66, 209, 162) transparent;
     transition: all ease-in-out 0.5s;
 }
 
 .logo:hover{
     text-decoration: underline;
+    text-decoration-color: rgb(66, 209, 162);
     font-size: 4rem;
+}
+
+.logoSBox{
+    width: min-content;
+    display: inline-block;
+}
+
+.logoS{
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: black;
+    text-decoration: underline transparent;
+    transition: all ease-in-out 0.5s;
+    text-decoration-color: rgb(66, 209, 162) transparent;
+}
+
+.logoS:hover{
+    text-decoration: underline;
+    font-size: 4rem;
+    text-decoration-color: rgb(66, 209, 162);
 }
 
 /* container form setting */
@@ -211,3 +234,4 @@ input{
 .bgcol{
     padding: 0.5rem;
 }
+
