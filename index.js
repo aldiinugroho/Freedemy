@@ -6,8 +6,10 @@ const path = require("path");
 // panggil controller
 const homeController = require("./controllers/homeController");
 const signupController = require("./controllers/signupController");
+const errHandler = require("./controllers/errorController");
+const testController = require("./controllers/testController");
 
-const app = express();
+var app = express();
 app.listen(port, console.log("listen to port : "+port));
 
 // app.use("/", router);
@@ -18,18 +20,9 @@ app.use(express.static(path.join(__dirname, "./controllers/view")));
 app.get("/", homeController);
 app.get("/signup", signupController);
 
-// app.get("/signup", (req,res) => {
-//     res.sendFile(path.join(__dirname+'/view/signup.html'));
-// })
+// error handler 
+app.post("/error", errHandler);
+app.get("/error", errHandler);
 
-// app.post("/error", (req,res) => {
-//     res.sendFile(path.join(__dirname+'/view/error404.html'));
-// })
-
-// app.get("/errors", (req,res) => {
-//     res.sendFile(path.join(__dirname+'/view/error404.html'));
-// })
-
-// app.post('/data',(req,res) => {
-//     res.end(JSON.stringify(req.body));
-// });
+// test
+app.post("/data", testController);

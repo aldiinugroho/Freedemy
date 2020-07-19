@@ -6,8 +6,4 @@ router.get("/", (req,res) => {
     res.sendFile(path.join(__dirname+'./view/index.html'));
 });
 
-// router.get("/signup", (req,res) => {
-//     res.sendFile(path.join(__dirname+'/view/signup.html'));
-// })
-
 module.exports = router;
