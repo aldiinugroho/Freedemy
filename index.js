@@ -3,20 +3,25 @@ const express = require("express");
 const port = 3000;
 const bodyparser = require("body-parser");
 const path = require("path");
+
 // panggil controller
 const homeController = require("./controllers/homeController");
 const signupController = require("./controllers/signupController");
 const errHandler = require("./controllers/errorController");
 const testController = require("./controllers/testController");
+const { Mongoose } = require("mongoose");
 
 var app = express();
 app.listen(port, console.log("listen to port : "+port));
 
 // app.use("/", router);
-app.use(bodyparser());
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}));
+
 // // untuk merender css
 app.use(express.static(path.join(__dirname, "./controllers/view")));
-// app.use("/", homeController);
+
+// idk
 app.get("/", homeController);
 app.get("/signup", signupController);
 
