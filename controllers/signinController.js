@@ -11,30 +11,37 @@ const saltRounds = 10;
 
 router.post("/signindata", async (req,res) => {
     // if(err) throw err;
-    var Upass = req.body.LoginPassword;
-    var Uusername = req.body.LoginUsername;
+    try {
+        var Upass = req.body.LoginPassword;
+        var Uusername = req.body.LoginUsername;
 
-    data.findOne({username: Uusername}, (err, obj) => {
-        try {
-            if(!obj){
-                res.redirect("/");
-                console.log("no username match !!");
-            }else{
-                bcrypt.compare(Upass, obj.password, (err,result) => {
-                    if(!err)
-                    {
-                        console.log(result);
-                    }
-                });
-                res.end(JSON.stringify(obj.password));
-                console.log("welcome back :) .");
-                console.log(obj);
-            }
-        } catch (err) {
-            throw err;
-        }
-    });
+        const done = await checkUser(Uusername,Upass);
+        if(done == true){
+            res.end(JSON.stringify(req.body));
+            console.log(done);
+        }else{
+            res.redirect("/");
+            console.log(done);
+        } 
+    } catch (error) {
+        console.log(error);
+    }
 
 });
+
+async function checkUser(Uname,Upas) {
+    try {
+        const user = await data.findOne({username: Uname}).exec();
+        const match = await bcrypt.compare(Upas, user.password);
+ 
+        if(match) {
+            return match;
+        }else{
+            return match;
+        }
+    } catch (error) {
+        console.log("sorry error"+error);
+    }
+}
 
 module.exports = router;
