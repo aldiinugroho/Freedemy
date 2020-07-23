@@ -3,9 +3,10 @@ const express = require("express");
 const port = 3000;
 const bodyparser = require("body-parser");
 const path = require("path");
+const session = require("express-session");
 
 // panggil controller
-const homeController = require("./controllers/homeController");
+const indexController = require("./controllers/indexController");
 const signupController = require("./controllers/signupController");
 const errHandler = require("./controllers/errorController");
 const singinController = require("./controllers/signinController");
@@ -17,11 +18,20 @@ app.listen(port, console.log("listen to port : "+port));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
+app.use(session({
+    secret: "secretSes",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 60 * 1000 * 30
+    }
+}))
+
 // // untuk merender css
 app.use(express.static(path.join(__dirname, "./controllers/view")));
 
 // idk
-app.get("/", homeController);
+app.get("/", indexController);
 app.get("/signup", signupController);
 
 // error handler 

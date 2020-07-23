@@ -17,10 +17,13 @@ router.post("/signindata", async (req,res) => {
 
         const done = await checkUser(Uusername,Upass);
         if(done == true){
-            res.end(JSON.stringify(req.body));
-            console.log(done);
+            // res.end(JSON.stringify(req.body));
+            // console.log(done);
+
+            req.session.user = await getDataFromDB(Uusername);
+            console.log("data true and checked");
         }else{
-            res.redirect("/");
+            res.redirect("/error");
             console.log(done);
         } 
     } catch (error) {
@@ -42,6 +45,11 @@ async function checkUser(Uname,Upas) {
     } catch (error) {
         console.log("sorry error"+error);
     }
+}
+
+async function getDataFromDB(uname) {
+    const dat = await data.findOne({username: uname}).exec()
+    return dat
 }
 
 module.exports = router;
