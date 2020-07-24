@@ -1,12 +1,20 @@
-console.log("hello");
+// console.log("hello");
 
-const API_URL = "http://localhost:3000/homepage"
+const API_URL = "http://localhost:3000/userdat"
 
-async function getUdata(){
-    const response = await fetch(API_URL, {method: "GET"});
-    const data = await response.json();
-    console.log(data)
+async function getdat(){
+    try {
+        const response = await fetch(API_URL)
+        const data = await response.json()
+        document.getElementById("name").innerHTML = data.username;
+        document.getElementById("email").innerHTML = data.email;
+    } catch (error) {
+        console.log("Freedemy.")
+    }
 }
 
-getUdata();
-
+try {
+    getdat()
+} catch (error) {
+    console.log("something went wrong")
+}

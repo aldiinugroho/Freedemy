@@ -36,6 +36,7 @@ app.get("/", indexController);
 app.get("/signup", signupController);
 
 app.get("/homepage",homeController);
+app.get("/userdat",homeController);
 
 // error handler 
 app.post("/error", errHandler);

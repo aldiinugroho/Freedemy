@@ -2,12 +2,19 @@ const express = require("express");
 const path = require("path");
 var router = express.Router();
 
-router.get("/homepage", async (req,res) => {
-    const user = req.session.user;
-
-    await res.sendFile(path.join(__dirname+'/view/homepage.html'));
-    // await res.send(user)
+router.get("/userdat", async (req,res) => {
+    try {
+        const user = await req.session.user;
+        res.json(user)
+    } catch (error) {
+        console.log("just error")
+    }
 });
 
+router.get("/homepage", (req,res) => {
+    res.sendFile(path.join(__dirname+'/view/homepage.html'));
+});
+
+// res.render(user)
 
 module.exports = router;
