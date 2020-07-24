@@ -7,6 +7,7 @@ var router = express.Router();
 
 // hash
 const bcrypt = require("bcrypt");
+const { response } = require("express");
 const saltRounds = 10;
 
 router.post("/signindata", async (req,res) => {
@@ -19,12 +20,12 @@ router.post("/signindata", async (req,res) => {
         if(done == true){
             // res.end(JSON.stringify(req.body));
             // console.log(done);
-
             req.session.user = await getDataFromDB(Uusername);
             console.log("data true and checked");
+            res.redirect("/homepage");
         }else{
-            res.redirect("/error");
-            console.log(done);
+            res.redirect("/");
+            // console.log(done);
         } 
     } catch (error) {
         console.log(error);
@@ -49,7 +50,7 @@ async function checkUser(Uname,Upas) {
 
 async function getDataFromDB(uname) {
     const dat = await data.findOne({username: uname}).exec()
-    return dat
+    return dat;
 }
 
 module.exports = router;

@@ -10,11 +10,12 @@ const indexController = require("./controllers/indexController");
 const signupController = require("./controllers/signupController");
 const errHandler = require("./controllers/errorController");
 const singinController = require("./controllers/signinController");
+const homeController = require("./controllers/homeController");
+const tests = require("./controllers/test");
 
 var app = express();
 app.listen(port, console.log("listen to port : "+port));
 
-// app.use("/", router);
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
@@ -34,6 +35,8 @@ app.use(express.static(path.join(__dirname, "./controllers/view")));
 app.get("/", indexController);
 app.get("/signup", signupController);
 
+app.get("/homepage",homeController);
+
 // error handler 
 app.post("/error", errHandler);
 app.get("/error", errHandler);
@@ -41,3 +44,5 @@ app.get("/error", errHandler);
 // data flow
 app.post("/signupdata", signupController);
 app.post("/signindata", singinController);
+
+app.post("/test", tests);
