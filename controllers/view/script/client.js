@@ -3,7 +3,7 @@
 // const form = document.getElementById("datald")
 const LoadingElement = document.getElementById("ld")
 const form = document.getElementById("datald")
-const dataToshow = document.querySelector(".dataToshow")
+const dataToshow = document.querySelector("#dataToshow")
 
 const API_URL = "http://localhost:3000/userdat"
 const API_URL_TEST = "http://localhost:3000/test"
@@ -30,6 +30,7 @@ try {
 
 async function getAll() {
     try {
+        // LoadingElement.style.display = ""
         const response = await fetch(API_URL_TEST)
         const data = await response.json()
         const AllData = data

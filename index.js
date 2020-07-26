@@ -11,7 +11,7 @@ const signupController = require("./controllers/signupController");
 const errHandler = require("./controllers/errorController");
 const singinController = require("./controllers/signinController");
 const homeController = require("./controllers/homeController");
-const tests = require("./controllers/test");
+const logoutController = require("./controllers/logoutController")
 
 var app = express();
 app.listen(port, console.log("listen to port : "+port));
@@ -39,6 +39,9 @@ app.get("/signup", signupController);
 
 app.get("/homepage",homeController);
 app.get("/userdat",homeController);
+app.get("/test", homeController);
+
+app.get("/logout", logoutController)
 
 // error handler 
 app.post("/error", errHandler);
@@ -48,4 +51,3 @@ app.get("/error", errHandler);
 app.post("/signupdata", signupController);
 app.post("/signindata", singinController);
 
-app.get("/test", tests);

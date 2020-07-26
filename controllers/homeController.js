@@ -11,6 +11,15 @@ router.get("/userdat", async (req,res) => {
     }
 });
 
+router.get("/test", async (req,res) => {
+    try {
+        const dats = await req.session.datas;
+        res.json(dats) 
+    } catch (error) {
+        
+    }
+});
+
 router.get("/homepage", (req,res) => {
     res.sendFile(path.join(__dirname+'/view/homepage.html'));
 });

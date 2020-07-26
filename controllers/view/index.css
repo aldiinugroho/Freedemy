@@ -264,3 +264,13 @@ input{
 .load{
     width: 20rem;
 }
+
+.rapih>div{
+    margin: 1rem;
+    padding: 0.3rem;
+    border-left: 0.5rem solid rgb(0, 132, 255);
+    background-color: rgba(112, 219, 252, 0.514);
+    width: 15rem;
+    height: min-content;
+    border-radius: 5px;
+}

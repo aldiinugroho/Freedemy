@@ -17,9 +17,8 @@ router.post("/signindata", async (req,res) => {
 
         const done = await checkUser(Uusername,Upass);
         if(done == true){
-            // res.end(JSON.stringify(req.body));
-            // console.log(done);
             req.session.user = await getDataFromDB(Uusername);
+            req.session.datas = await getdats();
             res.redirect("/homepage");
         }else{
             res.redirect("/");
@@ -29,6 +28,12 @@ router.post("/signindata", async (req,res) => {
     }
 
 });
+
+// test data
+async function getdats() {
+    const dat = await  data.find({}).exec()
+    return dat
+}
 
 async function checkUser(Uname,Upas) {
     try {
