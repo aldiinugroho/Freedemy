@@ -24,7 +24,7 @@
 
             <div class="contSOLS">
                 <div>
-                    <P style="font-weight: bold;">Baru ?</P>
+                    <P style="font-weight: bold;">New ?</P>
                 </div>
 
                 <div>
@@ -35,7 +35,7 @@
 
         </div>
 
-        <div class="pad">
+        <div class="pad" id="datald">
             <form action="/signindata" method="POST">
                 <div class="contSOL">
                     <div>
@@ -46,16 +46,24 @@
                         <input type="password" name="LoginPassword" id="LoginPass" placeholder="Password">
                     </div>
                     
-                    <div>
-                        <button class="LoginDsignn">Sign in</button>
+                    <div class="HnS">
+                        <div>
+                            <button class="LoginDsignn" id="klk">Sign in</button>
+                        </div>
+    
+                        <div>
+                            <a class="LoginDsignHelp" href="/error">?</a>
+                        </div>
                     </div>
                 </div>
                     
             </form>
         </div>
-
+        <div>
+            <img class="load" id="ld" src="./assets/loading.gif" alt="loading">
+        </div>
     </div>
 
 </body>
-<script src="./client.js"></script>
+<script src="./script/client.js"></script>
 </html>

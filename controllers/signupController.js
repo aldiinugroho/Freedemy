@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const data = mongoose.model("user");
+const data = mongoose.model("userSignup");
 
 // hash
 const bcrypt = require("bcrypt");
@@ -26,7 +26,7 @@ function insertUserData(req,res) {
     userData.username = req.body.username;
     userData.email = req.body.email;
     userData.password = hash;
-    userData.date = Date.now();
+    userData.date = new Date();
 
     userData.save((err,doc) => {
         if(!err){

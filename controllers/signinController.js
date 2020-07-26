@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const data = mongoose.model("user");
+const data = mongoose.model("userSignup");
 
 var router = express.Router();
 
@@ -11,7 +11,6 @@ const { response } = require("express");
 const saltRounds = 10;
 
 router.post("/signindata", async (req,res) => {
-    // if(err) throw err;
     try {
         var Upass = req.body.LoginPassword;
         var Uusername = req.body.LoginUsername;
@@ -21,14 +20,12 @@ router.post("/signindata", async (req,res) => {
             // res.end(JSON.stringify(req.body));
             // console.log(done);
             req.session.user = await getDataFromDB(Uusername);
-            console.log("data true and checked");
             res.redirect("/homepage");
         }else{
             res.redirect("/");
-            // console.log(done);
         } 
     } catch (error) {
-        console.log(error);
+        console.log("READ !! : "+error)
     }
 
 });
@@ -44,7 +41,7 @@ async function checkUser(Uname,Upas) {
             return match;
         }
     } catch (error) {
-        console.log("sorry error"+error);
+        console.log("READ !! : "+error);
     }
 }
 

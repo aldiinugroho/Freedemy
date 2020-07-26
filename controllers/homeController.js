@@ -7,7 +7,7 @@ router.get("/userdat", async (req,res) => {
         const user = await req.session.user;
         res.json(user)
     } catch (error) {
-        console.log("just error")
+        
     }
 });
 
@@ -15,6 +15,5 @@ router.get("/homepage", (req,res) => {
     res.sendFile(path.join(__dirname+'/view/homepage.html'));
 });
 
-// res.render(user)
 
 module.exports = router;

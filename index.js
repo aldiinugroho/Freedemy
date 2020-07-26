@@ -24,7 +24,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 60 * 1000 * 30
+        maxAge: false
+        // set false untuk login setiap client restart
+        // set value untuk expire login 24 * 60 * 60 * 1000 = 24 jam
     }
 }))
 
@@ -46,4 +48,4 @@ app.get("/error", errHandler);
 app.post("/signupdata", signupController);
 app.post("/signindata", singinController);
 
-app.post("/test", tests);
+app.get("/test", tests);

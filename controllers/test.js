@@ -2,12 +2,12 @@ const express = require("express");
 const path = require("path");
 var router = express.Router();
 const mongoose = require("mongoose");
-const data = mongoose.model("user");
+const data = mongoose.model("userSignup");
 
-router.post("/test", async (req,res) => {
+router.get("/test", async (req,res) => {
     // if(err) throw err;
     const dat = await data.find({})
-    console.log(dat);
+    // console.log(dat);
     res.json(dat) 
 });
 
