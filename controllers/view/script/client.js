@@ -5,8 +5,8 @@ const LoadingElement = document.getElementById("ld")
 const form = document.getElementById("datald")
 const dataToshow = document.querySelector("#dataToshow")
 
-const API_URL = "http://localhost:3000/userdat"
-const API_URL_TEST = "http://localhost:3000/test"
+const API_URL = "http://192.168.100.53:3000/userdat"
+const API_URL_TEST = "http://192.168.100.53:3000/test"
 const min = 1 * 60
 const Rmin = min * 1000
 
