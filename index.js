@@ -1,6 +1,6 @@
 require("./models/db");
 const express = require("express");
-const port = 3000;
+const port = process.env.port || 3000;
 const bodyparser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
@@ -32,6 +32,11 @@ app.use(session({
 
 // // untuk merender css
 app.use(express.static(path.join(__dirname, "./controllers/view")));
+app.use((req,res,next) => {
+    res.setHeader("Access-Control-Allow-Headers","*")
+    res.setHeader("Access-Control-Allow-Origin","*")
+    next()
+})
 
 // idk
 app.get("/", indexController);
