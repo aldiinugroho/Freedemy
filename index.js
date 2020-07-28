@@ -1,33 +1,60 @@
-const express = require('express');
-const app = express();
-const path = require('path');
+require("./models/db");
+const express = require("express");
 const port = 3000;
 const bodyparser = require("body-parser");
+const path = require("path");
+const session = require("express-session");
 
-// app.use("/", router);
-app.use(bodyparser());
+// panggil controller
+const indexController = require("./controllers/indexController");
+const signupController = require("./controllers/signupController");
+const errHandler = require("./controllers/errorController");
+const singinController = require("./controllers/signinController");
+const homeController = require("./controllers/homeController");
+const logoutController = require("./controllers/logoutController")
 
-// untuk merender css
-app.use(express.static(path.join(__dirname, '/view')));
-
-app.get("/home", (req,res) => {
-    res.sendFile(path.join(__dirname+'/view/index.html'));
-})
-
-app.get("/signup", (req,res) => {
-    res.sendFile(path.join(__dirname+'/view/signup.html'));
-})
-
-app.post("/error", (req,res) => {
-    res.sendFile(path.join(__dirname+'/view/error404.html'));
-})
-
-app.get("/errors", (req,res) => {
-    res.sendFile(path.join(__dirname+'/view/error404.html'));
-})
-
-app.post('/data',(req,res) => {
-    res.end(JSON.stringify(req.body));
-});
-
+var app = express();
 app.listen(port, console.log("listen to port : "+port));
+
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: true}));
+
+app.use(session({
+    secret: "secretSes",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: false
+        // set false untuk login setiap client restart
+        // set value untuk expire login 24 * 60 * 60 * 1000 = 24 jam
+    }
+}))
+
+// // untuk merender css
+app.use(express.static(path.join(__dirname, "./controllers/view")));
+
+app.use((req,res,next) => {
+    res.setHeader("Access-Control-Allow-Headers","*")
+    res.setHeader("Access-Control-Allow-Origin","*")
+    res.setHeader("Access-Control-Allow-Methods","*")
+    next()
+})
+
+// idk
+app.get("/", indexController);
+app.get("/signup", signupController);
+
+app.get("/homepage",homeController);
+app.get("/userdat",homeController);
+app.get("/test", homeController);
+
+app.get("/logout", logoutController)
+
+// error handler 
+app.post("/error", errHandler);
+app.get("/error", errHandler);
+
+// data flow
+app.post("/signupdata", signupController);
+app.post("/signindata", singinController);
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Freedemy</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+
+    <!-- Header -->
+    <div class="contHeader">
+        <div class="contHead">
+
+            <div>
+                <a href="/"><p class="logo">Freedemy</p></a>
+            </div>
+
+            <div class="contSOLS">
+                <div>
+                    <P style="font-weight: bold;">New ?</P>
+                </div>
+
+                <div>
+                    <button class="LoginDsign"><a href="/signup">Sign up</a></button>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="pad" id="datald">
+            <form action="/signindata" method="POST">
+                <div class="contSOL">
+                    <div>
+                        <input type="text" name="LoginUsername" id="LoginUser" placeholder="Username">
+                    </div>
+                    
+                    <div>
+                        <input type="password" name="LoginPassword" id="LoginPass" placeholder="Password">
+                    </div>
+                    
+                    <div class="HnS">
+                        <div>
+                            <button class="LoginDsignn" id="klk">Sign in</button>
+                        </div>
+    
+                        <div>
+                            <a class="LoginDsignHelp" href="/error">?</a>
+                        </div>
+                    </div>
+                </div>
+                    
+            </form>
+        </div>
+        <div>
+            <img class="load" id="ld" src="./assets/loading.gif" alt="loading">
+        </div>
+    </div>
+
+</body>
+<script src="./script/client.js"></script>
+</html>
